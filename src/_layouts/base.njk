@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        {% include "head.njk" %}
+        <link rel="stylesheet" href="/assets/site.css">
+        <script src="/assets/site.js" defer></script>
+    </head>
+    <body>
+        <header role="banner"
+            <div class="container">
+                <a href="/" rel="home">{{ site.title }}</a></div>
+        </header>
+    <main>
+        {{ content | safe }}
+    </main>
+    <footer role="contentinfo"></footer>
+</body>
+</html>

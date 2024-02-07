@@ -1,0 +1,3 @@
+{% set tag = props.tag if props.tag else "h1" %}
+
+<{{ tag }} class="text-2xl font-extrabold md:text-3xl lg:text-4xl">{{ props.content  }}</{{ tag }}>

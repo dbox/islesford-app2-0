@@ -1,0 +1,17 @@
+:root {
+    --base-font-size: 16px;
+    --global-border-radius: 3px;
+    --mobile-gutter: 5%;
+
+    /* colors by name */
+    --white: #fff;
+    --black: #000;
+
+    /* Colors by Type */
+    /* General */
+    /* Buttons */
+    /* Backgrounds */
+    /* Typography */
+    /* Interactive */
+    /* Borders */
+}

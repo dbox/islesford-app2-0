@@ -1,0 +1,18 @@
+@import './_reset.css';
+@import './_settings.css';
+
+/* Write some css! */
+
+body {
+    font-family: system-ui;
+    border: 15px solid burlywood;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
