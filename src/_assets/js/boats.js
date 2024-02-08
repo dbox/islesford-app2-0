@@ -1,3 +1,5 @@
+// boats.js
+
 import myBoatData from '../../_data/boatData.yaml';
 
 console.log(myBoatData);
@@ -22,6 +24,7 @@ function initializeDropdowns() {
   var firstCarrier = myBoatData[0];
   if (firstCarrier) {
       populateSeasons(firstCarrier.carrier);  // Pass the carrier name to populateSeasons
+      displayDepartures();  // Display departures for the default carrier and season
   }
 }
 

@@ -1,7 +1,11 @@
+# boatData.yaml
+
 - carrier: Beal and Bunker
   seasons:
     - season: spring
       notes: 1st Monday in May - June 18th
+      startDate: 3-20
+      endDate: 6-20
       departures:
         - location: Northeast Harbor to Islands
           locationShort: NEH
@@ -33,6 +37,8 @@
             - '17:15'
     - season: summer
       notes: June 20th - Sept 5th
+      startDate: 6-21
+      endDate: 9-22
       departures:
         - location: Northeast Harbor to Islands
           locationShort: NEH
@@ -72,35 +78,10 @@
             - '15:05'
             - '17:05'
             - '18:45'
-    - season: winter
-      notes: watch for schedule changes!
-      departures:
-        - location: Northeast Harbor to Islands
-          locationShort: NEH
-          times:
-            - '7:30'
-            - '11:00'
-            - '15:30'
-        - location: Great Cranberry to LCI
-          locationShort: GCI
-          times:
-            - '7:45'
-            - '11:15'
-            - '15:45'
-        - location: Islesford to GCI & NEH
-          locationShort: LCI
-          times:
-            - '8:15'
-            - '11:30'
-            - '16:00'
-        - location: Great Cranberry Island to NEH
-          locationShort: GCI
-          times:
-            - '8:30'
-            - '11:45'
-            - '16:15'
     - season: fall
       notes: September 4th - Second Week in October
+      startDate: 9-23
+      endDate: 12-21
       departures:
         - location: Northeast Harbor to Islands
           locationShort: NEH
@@ -130,6 +111,35 @@
             - '11:45'
             - '15:45'
             - '17:15'
+    - season: winter
+      notes: watch for schedule changes!
+      startDate: 12-22
+      endDate: 3-19
+      departures:
+        - location: Northeast Harbor to Islands
+          locationShort: NEH
+          times:
+            - '7:30'
+            - '11:00'
+            - '15:30'
+        - location: Great Cranberry to LCI
+          locationShort: GCI
+          times:
+            - '7:45'
+            - '11:15'
+            - '15:45'
+        - location: Islesford to GCI & NEH
+          locationShort: LCI
+          times:
+            - '8:15'
+            - '11:30'
+            - '16:00'
+        - location: Great Cranberry Island to NEH
+          locationShort: GCI
+          times:
+            - '8:30'
+            - '11:45'
+            - '16:15'
 - carrier: Cranberry Cove
   seasons:
     - season: spring

@@ -24,12 +24,6 @@ title: Welcome
 <script>
   console.log({{ boatsData | dump | safe }});
 </script>
-{# {%- from "macros.njk" import component -%}
-
-<div class="p-6">
-    <div class="container">
-        {{ component("headings/title", { content: "Title Component" }) }}
-    </div> #}
 
 <h1>welcome to {{ site.title }}</h1>
 
@@ -43,13 +37,13 @@ title: Welcome
     </div>
 
     <br>
-  <div class="boatChooser">  <select id="carrierSelect" onchange="populateSeasons.call(this)">
+  <div class="boatChooser">  <select id="carrierSelect"
         <!-- Options will be populated dynamically -->
     </select>
 
     <br>
 
-    <select id="seasonSelect" onchange="displayDepartures.call(this)">
+    <select id="seasonSelect">
         <!-- Options will be populated dynamically -->
     </select></div>
   
