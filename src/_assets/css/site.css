@@ -16,3 +16,13 @@ a {
     }
 }
 
+
+.boatChooser {
+    /* border: 5px solid green; */
+    display: flex;
+
+    & select {
+        padding: 5px;
+        margin-right: 5px;
+    }
+}

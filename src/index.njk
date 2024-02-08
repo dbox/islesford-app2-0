@@ -3,6 +3,27 @@ layout: base.njk
 title: Welcome
 ---
 
+{% for carrier in boatsData %}
+  <h2>{{ carrier.carrier }}</h2>
+
+  {% for season in carrier.seasons %}
+    <h3>{{ season.season }}</h3>
+    <p><strong>Notes:</strong> {{ season.notes }}</p>
+
+    <ul>
+      {% for departure in season.departures %}
+        <li>
+          <strong>{{ departure.location }}</strong> ({{ departure.locationShort }}): 
+          {{ departure.times | join(', ') }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endfor %}
+
+<script>
+  console.log({{ boatsData | dump | safe }});
+</script>
 {# {%- from "macros.njk" import component -%}
 
 <div class="p-6">
@@ -10,10 +31,34 @@ title: Welcome
         {{ component("headings/title", { content: "Title Component" }) }}
     </div> #}
 
-<h1>Welcome to {{ site.title }}</h1>
+<h1>welcome to {{ site.title }}</h1>
 
-<p>Now <a href="{{ site.url }}">get busy<a>.</p>
+<p>Now <a href="{{ site.url }}">get busy</a>.</p>
 
         <footer>
     Copyright {{ site.currentYear }}
         </footer>
+  <div id="nextDepartureContainer">
+        <!-- Next upcoming departure information will be displayed here -->
+    </div>
+
+    <br>
+  <div class="boatChooser">  <select id="carrierSelect" onchange="populateSeasons.call(this)">
+        <!-- Options will be populated dynamically -->
+    </select>
+
+    <br>
+
+    <select id="seasonSelect" onchange="displayDepartures.call(this)">
+        <!-- Options will be populated dynamically -->
+    </select></div>
+  
+
+    <div id="notesContainer"></div>
+    <br>
+
+    <div id="departuresContainer">
+        <!-- Departures and times will be displayed here -->
+    </div>
+
+

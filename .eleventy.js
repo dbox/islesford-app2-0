@@ -1,10 +1,13 @@
 
 const htmlmin = require('html-minifier')
+const yaml = require("js-yaml");
+const fs = require('fs');
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
 
   // Copy static assets
-  eleventyConfig.addPassthroughCopy('src/static')
+  eleventyConfig.addPassthroughCopy('src/static');
 
   // Minify HTML in production
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
@@ -18,14 +21,14 @@ module.exports = function (eleventyConfig) {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
-      })
+      });
     }
 
-    return content
-  })
+    return content;
+  });
 
   // Watch changes to source assets that are compiled outside of 11ty
-  eleventyConfig.addWatchTarget('./src/_assets/')
+  eleventyConfig.addWatchTarget('./src/_assets/');
 
   eleventyConfig.setServerOptions({
     liveReload: true,
@@ -48,11 +51,12 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'src/',
       output: 'dist',
+      data: '_data',       
       includes: '_includes',
       layouts: '_layouts',
     },
-    templateFormats: ['html', 'md', 'njk', 'ico'],
+    templateFormats: ['html', 'md', 'njk', 'ico', 'yaml'],
     htmlTemplateEngine: 'njk',
     passthroughFileCopy: true,
-  }
-}
+  };
+};

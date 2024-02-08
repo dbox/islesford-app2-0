@@ -1,0 +1,20 @@
+{
+    "name": "islesford.app",
+    "short_name": "Islesford",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "description": "A dashboard for Islesford including weather, boat times, shop hours, and a directory",
+    "icons": [{
+      "src": "img/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+        "src": "img/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }]
+  }

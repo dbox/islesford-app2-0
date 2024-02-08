@@ -1,10 +1,11 @@
-const path = require('path')
-const webpack = require('webpack')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const YAML = require('yaml-loader');
 
 module.exports = {
   entry: [
@@ -39,6 +40,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.yaml$/,
+        use: 'yaml-loader',
+      },
     ],
   },
   optimization: {
@@ -56,5 +61,8 @@ module.exports = {
       filename: 'site.css',
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.yaml'],
+  },
   mode: process.env.NODE_ENV,
-}
+};
