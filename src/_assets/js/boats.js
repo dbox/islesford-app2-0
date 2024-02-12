@@ -3,6 +3,35 @@
 import myBoatData from '../../_data/boatData.yaml';
 
 console.log(myBoatData);
+function getCurrentSeason() {
+    var currentDate = new Date();
+    var currentMonthDay = formatDate(currentDate.getMonth() + 1, currentDate.getDate());
+  
+    for (const carrier of myBoatData) {
+      for (const season of carrier.seasons) {
+        const startMonthDay1 = season.startDate ? formatDate(season.startDate) : null;
+        const endMonthDay1 = season.endDate ? formatDate(season.endDate) : null;
+  
+        const startMonthDay2 = season.startDate2 ? formatDate(season.startDate2) : null;
+        const endMonthDay2 = season.endDate2 ? formatDate(season.endDate2) : null;
+  
+        if (
+          (startMonthDay1 && endMonthDay1 && currentMonthDay >= startMonthDay1 && currentMonthDay <= endMonthDay1) ||
+          (startMonthDay2 && endMonthDay2 && currentMonthDay >= startMonthDay2 && currentMonthDay <= endMonthDay2)
+        ) {
+          return season.season;
+        }
+      }
+    }
+  
+    return "Unknown";
+  }
+  
+  function formatDate(month, day) {
+    const formattedMonth = month ? month.toString().padStart(2, '0') : '';
+    const formattedDay = day ? day.toString().padStart(2, '0') : '';
+    return formattedMonth + (formattedMonth && formattedDay ? '-' : '') + formattedDay;
+  }
 
 function initializeDropdowns() {
   var carrierSelect = document.getElementById("carrierSelect");
@@ -138,4 +167,4 @@ function showNextDeparture(departures) {
   }
 }
 
-export { initializeDropdowns, populateSeasons, displayDepartures, showNextDeparture };
+export { initializeDropdowns, populateSeasons, displayDepartures, showNextDeparture, getCurrentSeason };

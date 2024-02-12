@@ -69,7 +69,7 @@
     - season: summer
       notes: June 20th - Sept 5th
       startDate: 06-19
-      endDate: 09-05
+      endDate: 09-04
       departures:
         - location: Northeast Harbor to Islands
           locationShort: NEH
@@ -111,7 +111,7 @@
             - '18:45'
     - season: fall
       notes: September 4th - Second Week in October
-      startDate: 09-04
+      startDate: 09-05
       endDate: 10-15
       departures:
         - location: Northeast Harbor to Islands

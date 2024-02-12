@@ -1,7 +1,7 @@
 
 // site.js
 
-import { initializeDropdowns, populateSeasons, displayDepartures, showNextDeparture } from './boats.js';
+import { initializeDropdowns, populateSeasons, displayDepartures, showNextDeparture, getCurrentSeason } from './boats.js';
 
 // Attach event listeners and initialize dropdowns after functions are defined
 document.addEventListener("DOMContentLoaded", function () {
@@ -17,4 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     seasonSelect.addEventListener("change", function () {
         displayDepartures();
     });
+    
+    var currentSeason = getCurrentSeason();
+    console.log("Current Season:", currentSeason);
+    
 });
