@@ -111,6 +111,9 @@
             - '11:45'
             - '15:45'
             - '17:15'
+
+- carrier: Cranberry Cove
+  seasons:
     - season: winter
       notes: watch for schedule changes!
       startDate: 12-22
@@ -139,9 +142,7 @@
           times:
             - '8:30'
             - '11:45'
-            - '16:15'
-- carrier: Cranberry Cove
-  seasons:
+            - '16:15'  
     - season: spring
       notes: thasdfasdfis is a note
       departures:
